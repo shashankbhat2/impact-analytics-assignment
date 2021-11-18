@@ -6,11 +6,15 @@ const Home = () => {
   const { candidates, loading } = useFetch();
   const [filteredCandidates, setFilteredCandidates] = useState([]);
   const [search, setSearch] = useState("");
+  const [error, setError] = useState(false)
 
   const handleSearch = (e) => {
     const candidate = candidates.filter((candidate) =>
       candidate.name.toLowerCase().includes(search.toLowerCase())
     );
+    if(candidate.length === 0){
+      setError(true)      
+    }
     setSearch(search);
     setFilteredCandidates(candidate);
   };
@@ -19,6 +23,7 @@ const Home = () => {
     if (search !== "") {
       handleSearch();
     } else {
+      setError(false)
       setFilteredCandidates(candidates);
     }
   }, [search]);
@@ -35,7 +40,7 @@ const Home = () => {
           id="candidate_search"
           onChange={(e) => setSearch(e.target.value)}
         />
-        {filteredCandidates.length === 0 && <small className='alert_message'>No Such Candidates :(</small>}
+        {error && <small className='alert_message'>No Such Candidates :(</small>}
       </div>{" "}
       <div className="card_container">
         {filteredCandidates.length > 0 &&
