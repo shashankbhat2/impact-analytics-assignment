@@ -1,0 +1,36 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 15px 8px 56px -5px rgba(0,0,0,0.06);
+}
+
+
+.brand{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  margin: 0px 20px;
+  font-weight: 600;
+}
+
+ul{
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+ul > li{
+  margin: 0px 10px;
+  font-weight: 500;
+}
+.navlink{
+  color: #004E89;
+}
+
+.active{
+  border-bottom: 1px solid #004E89;
+}

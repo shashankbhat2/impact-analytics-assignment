@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Public+Sans:wght@300;400;700&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card_container {
+  display: grid;
+  margin: 20px 0px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 2rem;
+  margin-bottom: 50px;
+}
+.card_base {
+  border-radius: 5px;
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  flex-direction: row;
+  width: 350px;
+  padding: 10px;
+  align-items: center;
+  height: 100px;
+  overflow: hidden;
+  box-shadow: 15px 8px 56px -5px rgba(0, 0, 0, 0.06);
+}
+.card_img {
+  border-radius: 100px;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+.card_img > img {
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.page_title{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: #004E89;
+}
+hr{
+  border: 1px solid #2E2E3A;
+}
+.card_content {
+  margin: 0px 10px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.card_options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.btn {
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px;
+  color: #2E2E3A;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 5px;
+}
+
+.success_btn {
+  border: 1px solid #52b788;
+}
+
+.danger_btn {
+  border: 1px solid #ff3c38;
+}
+.search_btn{
+  background-color: navy;
+  color: white;
+}
+.success_btn:active,
+.success_btn:hover {
+  background-color: #52b788;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.danger_btn:active,
+.danger_btn:hover {
+  background-color: #ff3c38;
+  color: white;
+}
+.small_text{
+  color: #2E2E3A;
+  font-weight: 500;
+}
+.candidate_info_container{
+  display: flex;
+  margin: 20px 0px;
+  padding: 10px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: -4px -1px 54px 0px rgba(0,0,0,0.08);
+  flex-direction: row;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.candidate_img{
+  height: 200px;
+  width: 200px;
+}
+.candidate_img > img{
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+}
+.candidate_info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+.candidate_name{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+.candidate_options{
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+}
+.alert_message{
+  color: #004E89;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+.search_form{
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  align-items: center;
+}
+
+.search_form > input{
+  height: 40px;
+  border: none;
+  font-size: 18px;
+  border-bottom: 1px solid #004E89;
+}
+
+.search_form > input:active, input:focus{
+  outline: none;
+}
+
+.shortlisted{
+  background-color: #52b788;
+  color: white;
+}
+.rejected{
+  background-color: #ff3c38;
+  color: white;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
   }
 }
