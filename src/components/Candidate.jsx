@@ -7,10 +7,10 @@ const Candidate = () => {
   const [candidate, setCandidate] = useState({});
   const [shortlisted, setShortlisted] = useState(false);
   const [rejected, setRejected] = useState(false);
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState("");
   const { id } = useParams();
   const { candidates } = useFetch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCandidate = () => {
@@ -43,8 +43,8 @@ const Candidate = () => {
     );
     updatedStoredCandidates.push(updateSelectedCandidate);
     localStorage.setItem("candidates", JSON.stringify(updatedStoredCandidates));
-    setMessage('Candidate Shortlisted')
-    setTimeout(() => navigate('/'), 1000)
+    setMessage("Candidate Shortlisted");
+    setTimeout(() => navigate("/"), 1000);
   };
 
   const handleReject = () => {
@@ -65,8 +65,8 @@ const Candidate = () => {
     );
     updatedStoredCandidates.push(updateSelectedCandidate);
     localStorage.setItem("candidates", JSON.stringify(updatedStoredCandidates));
-    setMessage('Candidate Rejected')
-    setTimeout(() => navigate('/'), 1000)
+    setMessage("Candidate Rejected");
+    setTimeout(() => navigate("/"), 1000);
   };
 
   return (
@@ -104,7 +104,7 @@ const Candidate = () => {
                   {candidate.rejected || rejected ? "Rejected" : "Reject"}
                 </button>
               </div>
-              {message && <h4 className='alert_message'>{message}</h4>}
+              {message && <h4 className="alert_message">{message}</h4>}
             </div>
           </>
         )}
