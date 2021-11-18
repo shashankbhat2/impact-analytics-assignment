@@ -43,7 +43,7 @@ const Candidate = () => {
     );
     updatedStoredCandidates.push(updateSelectedCandidate);
     localStorage.setItem("candidates", JSON.stringify(updatedStoredCandidates));
-    setMessage('Shortlisted Candidate')
+    setMessage('Candidate Shortlisted')
     setTimeout(() => navigate('/'), 1000)
   };
 
@@ -65,7 +65,7 @@ const Candidate = () => {
     );
     updatedStoredCandidates.push(updateSelectedCandidate);
     localStorage.setItem("candidates", JSON.stringify(updatedStoredCandidates));
-    setMessage('Rejected Candidate')
+    setMessage('Candidate Rejected')
     setTimeout(() => navigate('/'), 1000)
   };
 
@@ -73,7 +73,6 @@ const Candidate = () => {
     <React.Fragment>
       <h3 className="page_title">Candidate Info</h3>
       <hr />
-      {message && <h2 className='alert_message'>{message}</h2>}
       <div className="candidate_info_container">
         {candidate && (
           <>
@@ -105,6 +104,7 @@ const Candidate = () => {
                   {candidate.rejected || rejected ? "Rejected" : "Reject"}
                 </button>
               </div>
+              {message && <h4 className='alert_message'>{message}</h4>}
             </div>
           </>
         )}
